@@ -1,0 +1,42 @@
+
+    <div class="row">
+        <div class="col-md-10">
+            <h3>Edit User</h3>
+        </div>
+        <div class="col-md-1">
+            <fa-icon [icon]="faXmark"></fa-icon>
+        </div>
+    </div>
+    <hr/>
+    <form [formGroup]="editUserForm">
+        <div class="row">
+            <mat-form-field class="example-full-width">
+             <input matInput placeholder="Name" formControlName="name" />
+            </mat-form-field>
+         </div>
+    <div class="row pt-2">
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="Email Address"formControlName="email">
+    </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-label>Gender:</mat-label>
+        <mat-radio-group aria-label="Select an option" formControlName="gender">
+            <mat-radio-button value="Male">Male</mat-radio-button>
+            <mat-radio-button value="Female">Female</mat-radio-button>
+        </mat-radio-group>
+</div>
+<div class="row">
+<mat-form-field appearance="fill" >
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" matFormControl="dob">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<!-- <mat-form-field appearance="fill"> -->
+    <label>Address</label>
+    <textarea class="form-control"rows="3" formControlName="address"></textarea>
+<!-- </mat-form-field> -->
+</div>
+<button class="btn btn-01" (click)="submit()">submit</button>
+</form>
